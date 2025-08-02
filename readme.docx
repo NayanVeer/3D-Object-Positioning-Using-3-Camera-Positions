@@ -1,0 +1,30 @@
+Title: 3D Object Positioning Using 3 Camera Positions
+Team Members:
+•	Nayankumar Appaso Veer
+•	Dermi Pegu
+•	K Sai Tarun
+
+  Objective
+The objective of this group term project, completed as part of the course Digital & Analytical Photogrammetry, is to accurately reconstruct the three-dimensional (3D) position of an object using images taken from three distinct camera positions. The study applies core photogrammetric techniques, including camera calibration, projection modelling, and triangulation, within a defined local coordinate system. Utilizing Python and OpenCV, the project estimates camera pose through the Perspective-n-Point (PnP) method and refines the results using least squares optimization to minimize reprojection error, thereby enabling precise 3D positioning with minimal equipment.
+
+  Abstract:
+This study presents a method for reconstructing the three-dimensional (3D) position of an object using images taken from three distinct camera positions. The methodology is rooted in classical photogrammetric principles, namely camera calibration, projection, and triangulation. The entire project workflow is implemented in a local coordinate system under defined assumptions, and the solution is developed using the OpenCV library in Python.
+The process begins with intrinsic camera calibration to determine internal parameters such as focal length, principal point, and lens distortion. Subsequently, Perspective-n-Point (PnP) is applied to estimate the external orientation—namely the rotation and translation vectors—of the camera with respect to known Ground Control Points (GCPs). These vectors serve as the basis for constructing the projection matrices required for triangulation.
+To further enhance the positional accuracy, non-linear least squares optimization is used to minimize the reprojection error between the observed and calculated image coordinates. The optimized parameters yield a more accurate estimation of the 3D coordinates of the object under study.
+This approach effectively demonstrates how combining camera calibration, GCP-based projection modelling, and triangulation can achieve reliable and accurate 3D positioning using low-cost imaging equipment. The method shows satisfactory performance in both test cases conducted, with positional errors within acceptable limits.
+Workflow & Methodology:
+This project follows a structured photogrammetric approach to determine the 3D position of an object using three images captured from different camera positions. The overall methodology includes the following steps:
+1.	Image_Acquisition:
+Three images were captured using a single calibrated camera from different viewpoints, ensuring all Ground Control Points (GCPs) and the target object were clearly visible in each image.
+2.	GCP_Selection:
+A set of known objects on a flat table surface were used as Ground Control Points. Their real-world 3D coordinates were measured, and corresponding 2D image coordinates were identified manually for each image.
+3.	Camera_Calibration:
+Intrinsic parameters of the camera, including focal length, principal point, and distortion coefficients, were obtained through calibration using a standard checkerboard pattern.
+4.	Camera_Pose_Estimation_(PnP):
+The external orientation parameters—rotation and translation vectors—for each camera position were computed using the Perspective-n-Point (PnP) method with the identified GCPs.
+5.	3D_Object_Positioning_(Triangulation):
+The 3D position of the target object was determined by triangulating its 2D image coordinates across the three views, using the derived camera parameters.
+6.	Accuracy_Enhancement_(Least_Squares_Optimization):
+To improve accuracy, reprojection errors were minimized through least squares optimization, resulting in refined camera poses and more accurate 3D object positioning.
+This methodology ensures reliable 3D localization with minimal hardware, leveraging core photogrammetric techniques within a local coordinate framework.
+
